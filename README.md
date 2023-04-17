@@ -3,22 +3,38 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+Things you need to cover:
 
-* Ruby version
+* Ruby Version: `3.0.0`
 
-* System dependencies
+* Rails Version: `6.0.6.1`
 
-* Configuration
+* Run Bundle
+  `bundle install`
 
-* Database creation
+* Configure the postgres username and password in `database.yml` and `docker-compose.yml` file.
 
-* Database initialization
+* Run the below command to set the configuration of docker:
+  `docker-compose build`
+  `docker-compose up`
 
-* How to run the test suite
+* If server is not running, then need to run the following command:
 
-* Services (job queues, cache servers, search engines, etc.)
+  `docker-compose up -d`
 
-* Deployment instructions
+  Note: docker-compose up -d command starts the Docker containers defined in the docker-compose.yml file in detached mode. This means the containers will run in the background and won't display their logs in the terminal.
 
-* ...
+  `docker-compose run web bash`
+
+  Note: docker-compose run web bash command runs the web service defined in the docker-compose.yml file, and starts a Bash shell in it. This allows you to access the command line interface of the running Docker container, which can be useful for various purposes like running database migrations, installing packages, debugging, etc.
+
+  Then, we need to run in terminal - 
+  `rails db:create` and `rails db:migrate`
+
+  After this need to exit from the terminal run: `exit`
+
+  Note: Overall, these commands are commonly used in a Dockerized Rails application to start the containers and access the shell of the running web service.
+
+  And in last need to run the server:
+    `docker-compose build`
+    `docker-compose up`
