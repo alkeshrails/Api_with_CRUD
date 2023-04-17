@@ -36,5 +36,5 @@ Things you need to cover:
   Note: Overall, these commands are commonly used in a Dockerized Rails application to start the containers and access the shell of the running web service.
 
   And in last need to run the server:
-    `docker-compose build`
+    `docker-compose build` and 
     `docker-compose up`
